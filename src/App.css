@@ -1,0 +1,20 @@
+html, body, #root{
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: #212121;
+  background-color: #eeeeee;
+}
+
+.wrapper {
+  width: 32rem;
+  margin: 2rem auto;
+}
+
+.new-post {
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  padding: 12px 0;
+  margin-bottom: 12px;
+}
