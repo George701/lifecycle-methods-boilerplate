@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { loadPosts } from './services';
 import Post from './Components/Post';
 import EditPost from './Components/EditPost';
 
@@ -9,6 +10,17 @@ export default class App extends Component {
     loadingPosts: true,
     posts: []
   };
+
+  async componentDidMount() {
+    const posts = await loadPosts();
+    if (posts.length !== 0) {
+      posts.sort((a, b) => {
+        return b.id - a.id;
+      })
+      this.setState({ posts })
+    }
+    this.setState({ loadingPosts: false });
+  }
   
   render() {
     const { posts, loadingPosts, creatingNewPost } = this.state;
