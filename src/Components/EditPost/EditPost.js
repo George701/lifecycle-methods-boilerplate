@@ -20,7 +20,7 @@ export class EditPost extends Component {
     }
   };
 
-  async componentDidMount() {
+  componentDidMount() {
     if (this.props.id) {
       this.setState({
         id: this.props.id,
